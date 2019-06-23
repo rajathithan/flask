@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Giftcards</h3>
+<a href="/giftcards/add" class="btn btn-success btn-sm">
+  <i class="glyphicon glyphicon-plus"></i>
+  Add Giftcard
+</a>
+
+{% for gc in gcs %}
+<div class="media">
+  <a href="/giftcards/{{gc.id}}">
+    <div class="media-body">
+      <h4>Giftcard No:{{gc.gcno}}</h4>
+      <h4>Balance: ${{gc.amount}}</h4>      
+    </div>
+  </a>
+</div>
+{% else %}
+<p>No giftcards found</p>
+{% endfor %}
+
+{% if next_page_token %}
+<nav>
+  <ul class="pager">
+    <li><a href="?page_token={{next_page_token}}">More</a></li>
+  </ul>
+</nav>
+{% endif %}
+
+{% endblock %}

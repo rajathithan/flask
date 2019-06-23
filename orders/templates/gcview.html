@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Giftcards</h3>
+
+<div class="btn-group">
+  <a href="/giftcards/{{gc.id}}/edit" class="btn btn-primary btn-sm">
+    <i class="glyphicon glyphicon-edit"></i>
+    Edit Giftcard
+  </a>
+  <a href="/giftcards/{{gc.id}}/delete" class="btn btn-danger btn-sm">
+    <i class="glyphicon glyphicon-trash"></i>
+    Delete Giftcard
+  </a>
+</div>
+
+<div class="media">
+  <div class="media-body">
+    <h4 class="gcno">
+      Giftcard No: {{gc.gcno}}
+      //  Giftcard Balance: $ {{gc.amount}}
+    </h4>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{# [START form] #}
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{action}}Giftcards</h3>
+
+<form method="POST" enctype="multipart/form-data">
+
+  <div class="form-group">
+    <label for="gcno">Giftcard no</label>
+    <input type="number" name="gcno" id="gcno" value="{{gc.gcno}}" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="amount"> Balance </label>
+    <span>$</span><input type="number" step="0.01" name="amount" id="amount" value="{{gc.amount}}" class="form-control"/>
+  </div>
+
+  <button type="submit" class="btn btn-success">Save</button>
+</form>
+
+{% endblock %}
+{# [END form] #}

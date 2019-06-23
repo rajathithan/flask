@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Orders</h3>
+
+<div class="btn-group">
+  <a href="/orders/{{order.id}}/edit" class="btn btn-primary btn-sm">
+    <i class="glyphicon glyphicon-edit"></i>
+    Edit order
+  </a>
+  <a href="/orders/{{order.id}}/delete" class="btn btn-danger btn-sm">
+    <i class="glyphicon glyphicon-trash"></i>
+    Delete order
+  </a>
+</div>
+
+<div class="media">
+  <div class="media-body">
+    <h4 class="Orderno">
+      OrderNo: {{order.orderno}}
+      //  Order Amount: $ {{order.amount}}
+      //  Order Status: {{order.status}}
+    </h4>
+  </div>
+</div>
+
+{% endblock %}

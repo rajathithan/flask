@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Orders</h3>
+<a href="/orders/add" class="btn btn-success btn-sm">
+  <i class="glyphicon glyphicon-plus"></i>
+  Add order
+</a>
+
+{% for order in orders %}
+<div class="media">
+  <a href="/orders/{{order.id}}">
+    <div class="media-body">
+      <h4>OrderNo:{{order.orderno}}</h4>
+      <h4>Amount: ${{order.amount}}</h4>
+      <h4>Status: {{order.status}}</h4>
+    </div>
+  </a>
+</div>
+{% else %}
+<p>No orders found</p>
+{% endfor %}
+
+{% if next_page_token %}
+<nav>
+  <ul class="pager">
+    <li><a href="?page_token={{next_page_token}}">More</a></li>
+  </ul>
+</nav>
+{% endif %}
+
+{% endblock %}
